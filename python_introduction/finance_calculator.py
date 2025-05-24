@@ -1,8 +1,8 @@
 monthly_income = input("Enter your monthly income:")
 monthly_expenses = input("Enter your total monthly expenses:")
-m1 = (monthly_income)
-m2 = (monthly_expenses)
-monthly_savings = float(m1) - float(m2)
+monthly_income = int(monthly_income)
+monthly_expenses = int(monthly_expenses)
+monthly_savings = float(monthly_income) - float(monthly_expenses)
 #simple intrerest is  (i = p * r * t)
 # principle =monthly_savings
 # rate = o.05
