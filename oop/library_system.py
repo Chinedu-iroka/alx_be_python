@@ -6,6 +6,9 @@ class Book:
     def get_details(self):
         return f"{self.title} by {self.author}"
 
+    def __str__(self):
+        return self.get_details()
+
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
@@ -14,6 +17,9 @@ class EBook(Book):
     def get_details(self):
         return f"{super().get_details()} [EBook - {self.file_size}MB]"
 
+    def __str__(self):
+        return self.get_details()
+
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
@@ -21,6 +27,9 @@ class PrintBook(Book):
 
     def get_details(self):
         return f"{super().get_details()} [PrintBook - {self.page_count} pages]"
+
+    def __str__(self):
+        return self.get_details()
 
 class Library:
     def __init__(self):
@@ -38,4 +47,4 @@ class Library:
         else:
             print("Library contains:")
             for idx, book in enumerate(self.books, start=1):
-                print(f"{idx}. {book.get_details()}")
+                print(f"{idx}. {book}")  # Uses __str__()
